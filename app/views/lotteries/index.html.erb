@@ -1,0 +1,6 @@
+<%= link_to 'log out', session_logout_path, method: :post %>
+<p>Hello Lottery</p>
+
+<% @draws.each do |draw| %>
+    <%= render partial: 'draw', locals: { user: draw } %>
+<% end %>

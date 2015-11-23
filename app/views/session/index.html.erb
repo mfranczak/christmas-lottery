@@ -1,2 +1,9 @@
 <h1>Session#index</h1>
 <p>Find me in app/views/session/index.html.erb</p>
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <%= link_to user.name, session_login_path(id: user.id), method: :post %>
+  </li>
+  <% end %>
+</ul>

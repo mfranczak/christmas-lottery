@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  get 'session/index'
 
+  get 'lottery' => 'lotteries#index'
+  post 'choose' => 'lotteries#choose'
+  get 'thanks' => 'lotteries#thanks'
+
+  get 'session/index'
   post 'session/logout'
   post 'session/login'
+
+  root 'session#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
