@@ -1,4 +1,6 @@
-<%= form_tag action: :choose do %>
+<div class="my-form-inline">
+<%= form_tag action: :choose  do %>
     <%= hidden_field_tag :draw_id, user.draw_id %>
-    <%= submit_tag %>
+    <%= submit_tag '', class: 'btn btn-primary draw' %>
 <% end %>
+</div>
