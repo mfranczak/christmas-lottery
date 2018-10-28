@@ -1,6 +1,0 @@
-== README
-
-This small application helps me and my family to organize a lottery to know who gives presesents.
-
-=== Live demo
-https://infinite-journey-9670.herokuapp.com

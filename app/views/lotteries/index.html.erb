@@ -1,7 +1,9 @@
-<div class="alert alert-info" role="alert">
-  Witaj <strong><%= @user.name %></strong>! | <%= link_to 'wyloguj', session_logout_path, method: :post %>
-</div>
+<div class="background-image background-full">
+  <div class="alert alert-info" role="alert">
+    Witaj <strong><%= @user.name %></strong>! | <%= link_to 'wyloguj', session_logout_path, method: :post %>
+  </div>
 
-<% @draws.each do |draw| %>
-    <%= render partial: 'draw', locals: { user: draw } %>
-<% end %>
+  <% @draws.each do |draw| %>
+      <%= render partial: 'draw', locals: { user: draw } %>
+  <% end %>
+</div>

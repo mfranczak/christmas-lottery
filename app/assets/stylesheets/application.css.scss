@@ -1,38 +1,254 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body.bkg {
-  background: image-url('bkg0.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+// body.bkg {
+//   background: image-url('bkg0.jpg') no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
+
+// div.container {
+//   background-color: rgba(255,255,255,0.7);
+//   margin: 0 auto;
+//   margin-top: 7%;
+//   padding: 20px;
+//   width: 80%;
+// }
+
+// div.users {
+//   margin-top: 20px;
+// }
+
+// div.users a {
+//   display: inline-block;
+//   margin-bottom: 10px ;
+// }
+
+
+// .draw {
+//   width: 125px;
+//   height: 125px;
+//   margin: 20px 10px 0 10px;
+// }
+
+// div.my-form-inline form {
+//   float: left
+// }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.background-full {
+  position:fixed;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;  
+  height: 100%;
+  width: 100%;
+}
+
+.background-image {
+  background-image: image-url('bkgd.png');
   background-size: cover;
 }
 
-div.container {
-  background-color: rgba(255,255,255,0.7);
-  margin: 0 auto;
-  margin-top: 7%;
-  padding: 20px;
-  width: 80%;
+.background-color {
+  background-color: #8acecf;
+  color: white;
 }
 
-div.users {
-  margin-top: 20px;
+.background-bottom {  
+  background-image: image-url('bkgd-bottom.png');
+  background-size: 390px;
+  background-position: bottom;
+  background-repeat: repeat-x;
 }
 
-div.users a {
-  display: inline-block;
-  margin-bottom: 10px ;
+div#who-are-you {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+div#who-are-you h1 {
+  font-size: 54px;
+  margin-bottom: 30px;
 }
 
 
-.draw {
-  width: 125px;
-  height: 125px;
-  margin: 20px 10px 0 10px;
+div#who-are-you a {
+  font-size: 32px;
+  margin-bottom: 5px;
 }
 
-div.my-form-inline form {
-  float: left
+div#thanks h1 {
+  position: fixed;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  font-size: 64px;
+}
+
+.init-fish-form {
+  display: none;
+}
+
+.fish {
+  width: 150px;
+  height: 90px;
+  position: absolute;
+  transition: transform 3s;  
+  .inner {
+    height: 100%;
+    transition: transform .3s;
+
+    &.right {
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
+    }
+  }
+}
+
+.fish-0 .inner {
+  background-image: image-url('fish-0.png');
+}
+
+.fish-1 .inner {
+  background-image: image-url('fish-1.png');
+}
+
+.fish-2 .inner {
+  background-image: image-url('fish-2.png');
+}
+
+$particles: 75;
+$width: 1000;
+$height: 1000;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
 }
