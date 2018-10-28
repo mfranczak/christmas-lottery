@@ -52,6 +52,20 @@ div#who-are-you {
   transform: translate(-50%, -50%);
 }
 
+div#lottery {
+  color: white;
+  h1 {
+    font-size: 32px;
+    text-shadow: 2px 2px #acd0d1;
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    text-align: center; 
+  }
+}
+
 div#who-are-you h1 {
   font-size: 54px;
   margin-bottom: 30px;
