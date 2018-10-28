@@ -1,41 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// body.bkg {
-//   background: image-url('bkg0.jpg') no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-// }
-
-// div.container {
-//   background-color: rgba(255,255,255,0.7);
-//   margin: 0 auto;
-//   margin-top: 7%;
-//   padding: 20px;
-//   width: 80%;
-// }
-
-// div.users {
-//   margin-top: 20px;
-// }
-
-// div.users a {
-//   display: inline-block;
-//   margin-bottom: 10px ;
-// }
-
-
-// .draw {
-//   width: 125px;
-//   height: 125px;
-//   margin: 20px 10px 0 10px;
-// }
-
-// div.my-form-inline form {
-//   float: left
-// }
+$break-small: 640px;
+$background-color: #8acecf;
 
 html,
 body {
@@ -58,10 +25,15 @@ body {
 .background-image {
   background-image: image-url('bkgd.png');
   background-size: cover;
+
+  @media screen and (min-width: $break-small) {
+    background-image: none;
+    background-color: $background-color;  
+  }
 }
 
 .background-color {
-  background-color: #8acecf;
+  background-color: $background-color;
   color: white;
 }
 
@@ -85,10 +57,13 @@ div#who-are-you h1 {
   margin-bottom: 30px;
 }
 
-
 div#who-are-you a {
   font-size: 32px;
   margin-bottom: 5px;
+
+  @media screen and (max-width: $break-small) {
+    font-size: 24px;
+  }
 }
 
 div#thanks h1 {
@@ -133,6 +108,10 @@ div#thanks h1 {
 
 .fish-2 .inner {
   background-image: image-url('fish-2.png');
+}
+
+.fish-3 .inner {
+  background-image: image-url('fish-3.png');
 }
 
 $particles: 75;
