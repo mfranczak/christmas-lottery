@@ -7,5 +7,13 @@ To configure participants edit `db/seeds.rb`
 rake db:migrate
 ```
 
-# Live demo
-https://infinite-journey-9670.herokuapp.com
+# Screens
+
+## Select your name
+![Select your name](./screens/start.png)
+
+## Select a fish
+![Select your name](./screens/selection.png)
+
+## Lottery result 
+![Select your name](./screens/result.png)

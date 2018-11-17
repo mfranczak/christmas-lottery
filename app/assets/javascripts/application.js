@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-var availableFishTypes = 4;
+var availableFishTypes = 5;
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
