@@ -10,10 +10,10 @@ rake db:migrate
 # Screens
 
 ## Select your name
-![Select your name](./screens/start.png | width=320)
+![Select your name](./screens/start.png)
 
 ## Select a fish
-![Select your name](./screens/selection.png | width=320)
+![Select your name](./screens/selection.png)
 
 ## Lottery result 
-![Select your name](./screens/result.png | width=320)
+![Select your name](./screens/result.png)
